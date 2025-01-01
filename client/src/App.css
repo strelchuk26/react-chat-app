@@ -1,0 +1,10 @@
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #8888883e transparent;
+    scroll-behavior: smooth;
+    transition: 100ms;
+}
+
+.custom-scrollbar:hover {
+    scrollbar-color: #88888851 transparent;
+}
