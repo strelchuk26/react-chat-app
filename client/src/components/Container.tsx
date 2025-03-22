@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import List from "./list/List";
 import Chat from "./chat/Chat";
 import Details from "./details/Details";
-import LoginPage from "./login/LoginPage";
+import AuthPage from "./AuthPage/AuthPage";
 
 const Container: React.FC = () => {
     const [user, setUser] = useState(false);
@@ -30,7 +30,7 @@ const Container: React.FC = () => {
                 </div>
             ) : (
                 <div className="w-[60vw] h-[70vh] bg-dark-grey-transperent rounded-[30px] flex backdrop-brightness-[140%] backdrop-blur-lg">
-                    <LoginPage />
+                    <AuthPage />
                 </div>
             )}
         </>

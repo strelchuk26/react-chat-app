@@ -5,10 +5,11 @@ interface CustomButtonProps {
     onClick?: () => void;
     disabled?: boolean;
     className?: string;
+    isSubmitting?: boolean;
     variant?: "primary" | "secondary" | "danger";
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ className, text, onClick, disabled = false, variant = "primary" }) => {
+const CustomButton: React.FC<CustomButtonProps> = ({ className, text, onClick, disabled = false, variant = "primary", isSubmitting = false, }) => {
     const disabledStyles = "bg-gray-300 text-gray-600 cursor-not-allowed";
     const baseStyles = "px-5 py-2 rounded-xl text-white font-semibold transition-all duration-300";
     const variantStyles = {
@@ -18,7 +19,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({ className, text, onClick, d
     };
 
     return (
-        <button className={`${baseStyles} ${disabled ? disabledStyles : variantStyles[variant]} ${className}`} onClick={onClick} disabled={disabled}>
+        <button type={isSubmitting ? "submit" : "button"} className={`${baseStyles} ${disabled ? disabledStyles : variantStyles[variant]} ${className}`} onClick={onClick} disabled={disabled}>
             {text}
         </button>
     );

@@ -16,8 +16,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
                     placeholder="Search"
                 />
             </div>
-            <div className="bg-dark-grey-transperent p-2 rounded-xl hover:cursor-pointer">
-                <img className="size-6" src="/plus.png" alt="plus" />
+            <div className="w-[40px] h-[40px] bg-dark-grey-transperent p-3 rounded-xl hover:cursor-pointer">
+                <img src="/plus.png" alt="plus" />
             </div>
         </div>
     );
