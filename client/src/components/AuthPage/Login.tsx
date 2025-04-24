@@ -42,8 +42,8 @@ const Login: React.FC<LoginProps> = ({ className }) => {
         <div className={`w-full flex justify-between ${className}`}>
             <form onSubmit={handleSubmit(onSubmit)} className="flex-1 gap-4 flex flex-col justify-center items-center">
                 <h1 className="font-bold text-[25px]">Welcome back!</h1>
-                <CustomInput placeholder="Email" />
-                <CustomInput placeholder="Password" />
+                <CustomInput {...register("email")} placeholder="Email" />
+                <CustomInput {...register("password")} placeholder="Password" />
                 <CustomButton isSubmitting variant="primary" text="Sign in" />
             </form>
         </div>

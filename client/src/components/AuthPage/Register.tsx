@@ -22,8 +22,6 @@ const Register: React.FC<RegisterProps> = ({ className }) => {
             const user = userCredential.user;
             const token = await user.getIdToken();
 
-            console.log("Token:", token);
-
             const response = await fetch("http://localhost:5000/register", {
                 method: "POST",
                 headers: {

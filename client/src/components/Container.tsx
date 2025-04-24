@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import List from "./list/List";
 import Chat from "./chat/Chat";
 import Details from "./details/Details";
 import AuthPage from "./AuthPage/AuthPage";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebaseConfig";
 
 const Container: React.FC = () => {
-    const [user, setUser] = useState(false);
+    const [user, setUser] = useState<null | any>(null);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+
+        return () => unsubscribe();
+    }, []);
 
     return (
         <>

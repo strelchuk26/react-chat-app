@@ -7,8 +7,12 @@ dotenv.config();
 
 const PORT = 5000;
 const app = express();
-app.use(cors());
 app.use(express.json());
+app.use(cors({
+    origin: "http://localhost:5173",
+    methods: ["POST"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  }));
 
 app.post("/auth", async (req, res) => {
     const token = req.headers.authorization?.split(" ")[1];
