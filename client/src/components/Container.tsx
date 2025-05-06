@@ -34,7 +34,7 @@ const Container: React.FC = () => {
             ></div>
             {user ? (
                 <div className="w-[90vw] h-[90vh] bg-dark-grey-transperent rounded-[30px] flex backdrop-brightness-[140%] backdrop-blur-lg">
-                    <List className="flex-1" />
+                    <List user={user} className="flex-1" />
                     <Chat className="flex-2" />
                     <Details className="flex-1" />
                 </div>
